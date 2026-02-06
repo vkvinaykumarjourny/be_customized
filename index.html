@@ -88,23 +88,21 @@ header {
   text-align: center;
 }
 
-/* ================= SEARCH (DESKTOP & MOBILE) ================= */
+/* ================= SEARCH ================= */
 .search-container {
   position: absolute;
   top: 15px;
   right: 15px;
   display: flex;
   gap: 6px;
-  z-index: 10;
 }
 
 #searchBox {
   width: 320px;
   padding: 10px;
-  background: white;
-  color: var(--text-light);
   border: 1px solid var(--gold);
   border-radius: 6px;
+  color: var(--bg-dark)
 }
 
 #searchBtn {
@@ -115,9 +113,6 @@ header {
   font-weight: 600;
   cursor: pointer;
 }
-
-.offer h1 { margin-bottom: 10px; }
-.offer p { margin-bottom: 20px; }
 
 /* ================= BUTTON ================= */
 .explore-btn {
@@ -132,8 +127,7 @@ header {
 /* ================= SERVICES ================= */
 .services {
   padding: 40px 20px;
-  background: var(--text-light);
-  
+  background-color: rgba(255, 217, 0, 0.61)
 }
 
 .services h2 {
@@ -150,20 +144,29 @@ header {
 }
 
 .service {
+  width: 180px;
   background: var(--card-bg);
-  width: 160px;
-  padding: 25px 15px;
-  text-align: center;
-  border-radius: 14px;
-  transition: 0.3s;
+  border-radius: 16px;
+  overflow: hidden;
   color: var(--text-light);
+  transition: 0.3s;
 }
 
-.service span {
-  font-size: 40px;
+/* IMAGE PART */
+.service img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
   display: block;
-  margin-bottom: 10px;
-  color: var(--gold);
+}
+
+/* TITLE PART */
+.service .title {
+  padding: 12px 10px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  background: var(--card-bg);
 }
 
 .service:hover {
@@ -171,26 +174,8 @@ header {
   box-shadow: 0 12px 30px rgba(212,175,55,0.25);
 }
 
-
-
-/* ================= MOBILE FIX ================= */
+/* ================= MOBILE ================= */
 @media (max-width: 600px) {
-
-  .search-container {
-    top: 10px;
-    right: 10px;
-    width: calc(100% - 20px);
-    justify-content: flex-end;
-  }
-
-  #searchBox {
-    width: 100%;
-  }
-
-  #searchBtn {
-    width: auto;
-  }
-
   .service-box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -198,6 +183,10 @@ header {
   }
 
   .service {
+    width: 100%;
+  }
+
+  #searchBox {
     width: 100%;
   }
 }
@@ -211,8 +200,8 @@ header {
     <img src="be_customiselogo.jpeg" width="50" alt="BE CUSTOMISED">
   </div>
   <div class="header-icons">
-    <a href="login.html"><img src="user.png" width="22"  height="24"alt="User"></a>
-    <span onclick="toggleMenu()"><img src="hamburger.png" width="28" height="28" alt="Menu"></span>
+    <a href="login.html"><img src="user.png" width="22" height="24"></a>
+    <span onclick="toggleMenu()"><img src="hamburger.png" width="28"></span>
   </div>
 </header>
 
@@ -225,34 +214,105 @@ header {
 </div>
 
 <section class="offer">
-
-  <!-- SEARCH TOP-RIGHT ON IMAGE -->
   <div class="search-container">
     <input type="text" id="searchBox" placeholder="Search products...">
     <button id="searchBtn">Search</button>
   </div>
 
-  <h1 style="color: white;">Premium Printings</h1>
-  <p style="color: lightskyblue;">Luxury prints for brands that matter</p>
+  <h1 style="color:white;">Premium Printings</h1>
+  <p style="color:lightskyblue;">Luxury prints for brands that matter</p>
   <button class="explore-btn">Explore Now</button>
-
 </section>
 
 <section class="services">
   <h2>Our Services</h2>
   <div class="service-box">
-   <div class="service"><span><img src="be_customiselogo.jpeg" width="70" height="70"></span>Visiting & Business cards</div>
-    <div class="service"><span><img src="be_customiselogo.jpeg" width="70" height="70"></span>Invitations</div>
-    <div class="service"><span><img src="be_customiselogo.jpeg" width="70" height="70"></span>Table Name Boards</div>
-    <div class="service"><span><img src="be_customiselogo.jpeg" width="70" height="70"></span>Posters</div>
-    <div class="service"><span><img src="be_customiselogo.jpeg" width="70" height="70"></span>Gum Stickers</div>
-    <div class="service"><span><img src="be_customiselogo.jpeg" width="70" height="70"></span>Photo Frames & Gifting Frames</div>
-    <div class="service"><span><img src="be_customiselogo.jpeg" width="70" height="70"></span>Customised Printed Cloths</div>
-    <div class="service"><span><img src="be_customiselogo.jpeg" width="70" height="70"></span>Ribben badges & Magnet badges</div>
-    <div class="service"><span><img src="be_customiselogo.jpeg" width="70" height="70"></span>Jewellery hold Cards</div>
-    <div class="service"><span><img src="be_customiselogo.jpeg" width="70" height="70"></span>Printed Bottels</div>
-    <div class="service"><span><img src="be_customiselogo.jpeg" width="70" height="70"></span>Customised Mugs</div>
-    <div class="service"><span><img src="be_customiselogo.jpeg" width="70" height="70"></span>Albums & more..</div>
+
+    <div class="service">
+      <a href="#">
+      <img src="be_customiselogo.jpeg" alt="Visiting & Business Cards">
+      </a>
+      <div class="title">Visiting & Business Cards</div>
+
+    </div>
+
+    <div class="service">
+      <a href="#">
+      <img src="be_customiselogo.jpeg" alt="Invitation">
+      </a>
+      <div class="title">Invitations</div>
+    </div>
+
+    <div class="service">
+      <a href="#">
+      <img src="be_customiselogo.jpeg" alt="Table Name Boards">
+      </a>
+      <div class="title">Table Name Boards</div>
+    </div>
+
+    <div class="service">
+      <a href="#">
+      <img src="be_customiselogo.jpeg" alt="Posters">
+      </a>
+      <div class="title">Posters</div>
+    </div>
+
+    <div class="service">
+      <a href="#">
+      <img src="be_customiselogo.jpeg" alt="Gum Stickers">
+      </a>
+      <div class="title">Gum Stickers</div>
+    </div>
+
+    <div class="service">
+      <a href="#">
+      <img src="be_customiselogo.jpeg" alt="Photo Frames & Gifting">
+      </a>
+      <div class="title">Photo Frames & Gifting</div>
+    </div>
+
+    <div class="service">
+      <a href="#">
+      <img src="be_customiselogo.jpeg" alt="Customised Printed Cloths">
+      </a>
+      <div class="title">Customised Printed Cloths</div>
+    </div>
+
+    <div class="service">
+      <a href="#">
+      <img src="be_customiselogo.jpeg" alt="Ribbon & Magnet Badges">
+      </a>
+      <div class="title">Ribbon & Magnet Badges</div>
+    </div>
+
+    <div class="service">
+      <a href="#">
+      <img src="be_customiselogo.jpeg" alt="Jewellery Hold Cards">
+      </a>
+      <div class="title">Jewellery Hold Cards</div>
+    </div>
+
+    <div class="service">
+      <a href="#">
+      <img src="be_customiselogo.jpeg" alt="Printed Bottles">
+      </a>
+      <div class="title">Printed Bottles</div>
+    </div>
+
+    <div class="service">
+      <a href="#">
+      <img src="be_customiselogo.jpeg" alt="Customised Mugs">
+      </a>
+      <div class="title">Customised Mugs</div>
+    </div>
+
+    <div class="service">
+      <a href="#">
+      <img src="be_customiselogo.jpeg" alt="Albums & More">
+      </a>
+      <div class="title">Albums & More</div>
+    </div>
+
   </div>
 </section>
 
@@ -270,15 +330,3 @@ function toggleMenu() {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
