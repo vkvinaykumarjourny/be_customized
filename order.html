@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Details</title>
+
+<style>
+body{
+  font-family:Arial,sans-serif;
+  background:#f2f2f2;
+  padding:30px;
+}
+
+.container{
+  display:flex;
+  gap:30px;
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+}
+
+.image-box, .form-box{
+  flex:1;
+}
+
+.image-box img{
+  width:100%;
+  border-radius:10px;
+  border:1px solid #ddd;
+}
+
+.form-box h2{
+  margin-bottom:15px;
+}
+
+.form-box input,
+.form-box textarea,
+.form-box button{
+  width:100%;
+  padding:10px;
+  margin-bottom:12px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+.form-box button{
+  background:#000;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+
+.form-box button:hover{
+  background:#333;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .container{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- SELECTED IMAGE -->
+  <div class="image-box">
+    <img id="selectedImage" alt="Selected Template">
+  </div>
+
+  <!-- ORDER FORM -->
+  <div class="form-box">
+    <h2>Order Details</h2>
+
+    <form action="https://formsubmit.co/waagh2681@@gmail.com" method="POST">
+
+      <!-- hidden image field -->
+      <input type="hidden" name="Selected Template Image" id="imageField">
+
+      <input type="text" name="Name" placeholder="Full Name" required>
+      <input type="tel" name="Mobile" placeholder="Mobile Number" required>
+      <input type="email" name="Email" placeholder="Email">
+      <textarea name="Printing Details" rows="4" placeholder="Enter printing details"></textarea>
+
+      <!-- optional settings -->
+      <input type="hidden" name="_subject" value="New Printing Order">
+      <input type="hidden" name="_captcha" value="false">
+
+      <button type="submit">Submit Order</button>
+    </form>
+  </div>
+
+</div>
+
+<script>
+// Get selected image from URL
+const params = new URLSearchParams(window.location.search);
+const img = params.get("img");
+
+if(img){
+  document.getElementById("selectedImage").src = img;
+  document.getElementById("imageField").value = img;
+}
+</script>
+
+</body>
+</html>
