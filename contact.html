@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Information</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+body{
+  font-family:'Poppins',sans-serif;
+  background:#faf7f5;
+  padding:20px;
+}
+
+.card{
+  background:#fff;
+  border:2px solid #f1e4dd;
+  border-radius:18px;
+  padding:20px;
+  max-width:420px;
+  margin:auto;
+}
+
+.card h2{
+  font-size:18px;
+  font-weight:500;
+}
+
+.subtitle{
+  font-size:13px;
+  color:#888;
+  margin-bottom:20px;
+}
+
+.row{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  margin-bottom:18px;
+}
+
+.icon-box{
+  width:44px;
+  height:44px;
+  background:#fdeee7;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: lightseagreen;
+  font-size:18px;
+}
+
+.text h4{
+  font-size:14px;
+  margin:0;
+  font-weight:500;
+}
+
+.text p{
+  font-size:13px;
+  margin-top:2px;
+  color:#666;
+}
+
+a.row{
+  text-decoration:none;
+  color:inherit;
+}
+
+a.row:hover{
+  background:#fff6f1;
+  border-radius:12px;
+  padding:8px;
+}
+
+.call-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background: lightseagreen;
+  color:#fff;
+  border:none;
+  padding:10px 18px;
+  border-radius:12px;
+  font-size:14px;
+  margin-top:6px;
+  cursor:pointer;
+}
+
+/* Business Hours */
+.hours{
+  background:#fff4ec;
+  border:2px solid #f1e4dd;
+  border-radius:18px;
+  padding:20px;
+  max-width:420px;
+  margin:20px auto;
+}
+
+.hours h3{
+  font-size:16px;
+  font-weight:500;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.time-row{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  margin-top:8px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Contact Information -->
+<div class="card">
+  <h2>Contact Information</h2>
+  <div class="subtitle">Reach out to us directly</div>
+
+  <div class="row">
+    <div class="icon-box"><i class="fa-regular fa-user"></i></div>
+    <div class="text">
+      <h4>Brand</h4>
+      <p>Be Customised</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="icon-box"><i class="fa-regular fa-user"></i></div>
+    <div class="text">
+      <h4>Admin</h4>
+      <p>Chirankhan MS</p>
+    </div>
+  </div>
+
+  <a href="https://wa.me/919844709684" target="_blank" class="row">
+    <div class="icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+    <div class="text">
+      <h4>WhatsApp / Call</h4>
+      <p>+91 98447 09684</p>
+    </div>
+  </a>
+
+  <a href="tel:+919019195022" class="row">
+    <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+    <div class="text">
+      <h4>Primary Contact</h4>
+      <p>+91 90191 95022</p>
+      <button class="call-btn">
+        <i class="fa-solid fa-phone"></i> Call Now
+      </button>
+    </div>
+  </a>
+
+  <!-- Instagram -->
+  <a href="instagram://user?username=chiru_m_s"
+     onclick="setTimeout(()=>{window.location.href='https://www.instagram.com/chiru_m_s'},800);"
+     class="row">
+
+    <div class="icon-box"><i class="fa-brands fa-instagram"></i></div>
+    <div class="text">
+      <h4>Instagram</h4>
+      <p>@chiru_m_s</p>
+    </div>
+  </a>
+
+  <!-- Meesho -->
+  <a href="https://www.meesho.com/"
+     target="_blank"
+     class="row">
+
+    <div class="icon-box">
+      <i class="fa-solid fa-bag-shopping"></i>
+    </div>
+    <div class="text">
+      <h4>Meesho Availability</h4>
+      <p>Shop on Meesho</p>
+    </div>
+  </a>
+
+  <div class="row">
+    <div class="icon-box"><i class="fa-solid fa-truck"></i></div>
+    <div class="text">
+      <h4>All India Delivery</h4>
+      <p>Nationwide shipping available</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+    <div class="text">
+      <h4>Service Area</h4>
+      <p>All Over India</p>
+    </div>
+  </div>
+</div>
+
+<!-- Business Hours -->
+<div class="hours">
+  <h3><i class="fa-regular fa-clock"></i> Business Hours</h3>
+
+  <div class="time-row">
+    <span>Monday - Friday</span>
+    <span>9:00 AM - 8:00 PM</span>
+  </div>
+
+  <div class="time-row">
+    <span>Saturday</span>
+    <span>10:00 AM - 6:00 PM</span>
+  </div>
+
+  <div class="time-row">
+    <span>Sunday</span>
+    <span>Closed</span>
+  </div>
+</div>
+
+</body>
+</html>
