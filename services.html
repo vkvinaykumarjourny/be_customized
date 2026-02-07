@@ -249,6 +249,12 @@ footer{
 
 <body>
 <section class="services">
+  <div class="search-container">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search services..." onkeyup="liveSearch()">
+    <button id="searchBtn" onclick="liveSearch()">Search</button>
+  </div>
+  </div>
   <h2>Our Services</h2>
   <div class="service-box">
 
@@ -365,5 +371,16 @@ footer{
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("active");
 }
+
+function liveSearch() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const services = document.querySelectorAll(".service");
+
+  services.forEach(service => {
+    const name = service.getAttribute("data-name").toLowerCase();
+    service.style.display = name.includes(input) ? "block" : "none";
+  });
+}
 </script>
 </html>
+
