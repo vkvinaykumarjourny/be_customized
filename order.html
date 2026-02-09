@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Order via WhatsApp</title>
 
 <style>
 body{
-  font-family:Arial, sans-serif;
+  font-family:Arial;
   background:#f2f2f2;
   padding:30px;
 }
-
 .container{
   display:flex;
   gap:30px;
@@ -19,47 +18,32 @@ body{
   padding:20px;
   border-radius:12px;
 }
-
-.image-box, .form-box{
-  flex:1;
-}
-
+.image-box,.form-box{flex:1}
 .image-box img{
   width:100%;
   border-radius:10px;
   border:1px solid #ddd;
 }
-
-.form-box input,
-.form-box textarea,
-.form-box button{
+input,textarea,button{
   width:100%;
   padding:10px;
   margin-bottom:12px;
   border-radius:6px;
   border:1px solid #ccc;
 }
-
 .order-btn{
   background:#25D366;
   color:#fff;
   border:none;
   font-size:16px;
-  cursor:pointer;
 }
-
 .back-btn{
   background:#000;
   color:#fff;
   border:none;
-  font-size:15px;
-  cursor:pointer;
 }
-
 @media(max-width:768px){
-  .container{
-    flex-direction:column;
-  }
+  .container{flex-direction:column}
 }
 </style>
 </head>
@@ -68,23 +52,20 @@ body{
 
 <div class="container">
 
-  <!-- Selected Image -->
   <div class="image-box">
-    <img id="selectedImage" alt="Selected Template">
+    <img id="selectedImage">
   </div>
 
-  <!-- Order Form -->
   <div class="form-box">
     <h2>Place Order</h2>
+    <p id="category"></p>
 
     <input type="text" id="name" placeholder="Full Name" required>
     <input type="tel" id="mobile" placeholder="Mobile Number" required>
     <textarea id="details" placeholder="Printing details"></textarea>
 
     <button class="order-btn" onclick="sendWhatsApp()">Order via WhatsApp</button>
-
-    <!-- BACK TO HOME BUTTON -->
-    <button class="back-btn" onclick="goHome()">⬅ Back to Home</button>
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
   </div>
 
 </div>
@@ -92,13 +73,17 @@ body{
 <script>
 const params = new URLSearchParams(window.location.search);
 const img = params.get("img");
+const cat = params.get("cat");
 
 if(!img){
-  alert("Please select a template first");
+  alert("Please select a template");
   window.location.href = "index.html";
 }
 
-document.getElementById("selectedImage").src = img;
+const fullImg = new URL(img, window.location.origin).href;
+
+document.getElementById("selectedImage").src = fullImg;
+document.getElementById("category").innerText = "Category: " + cat;
 
 function sendWhatsApp(){
   const name = document.getElementById("name").value;
@@ -106,31 +91,28 @@ function sendWhatsApp(){
   const details = document.getElementById("details").value;
 
   if(!name || !mobile){
-    alert("Please fill required fields");
+    alert("Fill required fields");
     return;
   }
 
-  const message =
+  const msg =
 `🖨️ New Printing Order
+📂 Category: ${cat}
 👤 Name: ${name}
 📞 Mobile: ${mobile}
 📝 Details: ${details}
 
-🖼️ Selected Design:
+🖼️ Design:
 ${fullImg}`;
 
-  const phone = "8431452355"; // OWNER WHATSAPP NUMBER
-  const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-
-  window.open(url, "_blank");
+  const phone = "8431452355";
+  window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(msg));
 }
 
-function goHome(){
-  window.location.href = "index.html";
+function goBack(){
+  history.back();
 }
 </script>
 
 </body>
 </html>
-
-
