@@ -95,7 +95,7 @@ const img = params.get("img");
 
 if(!img){
   alert("Please select a template first");
-  window.location.href = "templates.html";
+  window.location.href = "index.html";
 }
 
 document.getElementById("selectedImage").src = img;
@@ -117,7 +117,7 @@ function sendWhatsApp(){
 📝 Details: ${details}
 
 🖼️ Selected Design:
-${img}`;
+${selectedImage}`;
 
   const phone = "8431452355"; // OWNER WHATSAPP NUMBER
   const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
@@ -132,4 +132,5 @@ function goHome(){
 
 </body>
 </html>
+
 
