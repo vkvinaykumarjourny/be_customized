@@ -58,7 +58,7 @@ input,textarea,button{
 
   <div class="form-box">
     <h2>Place Order</h2>
-    <p id="category"></p>
+ 
 
     <input type="text" id="name" placeholder="Full Name" required>
     <input type="tel" id="mobile" placeholder="Mobile Number" required>
@@ -83,7 +83,6 @@ if(!img){
 const fullImg = new URL(img, window.location.origin).href;
 
 document.getElementById("selectedImage").src = fullImg;
-document.getElementById("category").innerText = "Category: " + cat;
 
 function sendWhatsApp(){
   const name = document.getElementById("name").value;
