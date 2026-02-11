@@ -373,6 +373,12 @@ body{
   <div class="cat-grid">
 
     <div class="cat">
+      <a href="mug.html"><img src="mug12.jfif"></a>
+      <h4>Customised Coffee Mugs</h4>
+      <p>18 Products</p>
+    </div>
+
+    <div class="cat">
       <a href="boutique.html"><img src="boutique.jpeg"></a>
       <h4>Boutique</h4>
       <p>29 Products</p>
@@ -404,27 +410,7 @@ body{
       <p>18 Products</p>
     </div>
 
-     <div class="cat">
-     <a href="finance.html"><img src="be_customiselogo.jpeg"></a>
-      <h4>Finance</h4>
-      <p>81 Products</p>
-  
-    </div>
-
-    <div class="cat">
-      <a href="ca.html"><img src="cs.jpeg"></a>
-      <h4>CA</h4>
-      <p>81 Products</p>
-    </div>
-
-    <div class="cat">
-      <a href="lic.html"><img src="lic.jpeg"></a>
-      <h4>LIC Agent</h4>
-      <p>107 Products</p>
-    </div>
-
-   
-    <div class="cat">
+  <div class="cat">
       <a href="dentist.html"><img src="dentist.jpeg"></a>
       <h4>Dentist</h4>
       <p>29 Products</p>
@@ -437,33 +423,15 @@ body{
       <p>20 Products</p>
     </div>
 
-    <div class="cat">
-      <a href="beauty.html"><img src="be_customiselogo.jpeg"></a>
-      <h4>Beauty Parlour</h4>
-      <p>18 Products</p>
-    </div>
+   
 
     <div class="cat">
       <a href="mobile.html"><img src="mobile.jpeg"></a>
-      <h4>Mobile Store</h4>
+      <h4>Mobile and Motor cars</h4>
       <p>15 Products</p>
     </div>
     
-    <div class="cat">
-      <a href="construction.html"><img src="construction.jpeg"></a>
-      <h4>Construction</h4>
-      <p>21 Products</p>
-    </div>
-
-    <div class="cat">
-      <a href="travel.html"><img src="travel.jpg"></a>
-      <h4>Travel Agent</h4>
-      <p>18 Products</p>
-    </div>
-
-
-    
-     
+  
   </div>
 </section>
 
@@ -471,40 +439,10 @@ body{
 </html>
 
 
-
-
-
 <script>
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("active");
 }
-
-/* 🔍 SEARCH LOGIC */
-const searchBox = document.getElementById("searchBox");
-const resultsBox = document.getElementById("searchResults");
-const services = document.querySelectorAll(".service");
-
-searchBox.addEventListener("input", () => {
-  const value = searchBox.value.toLowerCase().trim();
-  resultsBox.innerHTML = "";
-
-  if (value === "") {
-    resultsBox.style.display = "none";
-    return;
-  }
-
-  let matchFound = false;
-
-  services.forEach(service => {
-    if (service.dataset.name.includes(value)) {
-      resultsBox.appendChild(service.cloneNode(true));
-      matchFound = true;
-    }
-  });
-
-  resultsBox.style.display = matchFound ? "block" : "none";
-});
-
 
 </script>
 
@@ -563,7 +501,6 @@ searchBox.addEventListener("input", () => {
   </div>
 </footer>
 </html>
-
 
 
 
