@@ -295,14 +295,7 @@ body{
   }
 }
 
-/*style for mp4 video*/
-.video style{
-  display:flex;
-  justify-content:right;
-  padding: 20px;
-  outline: 4px solid lightseagreen;
 
-}
 
 
 .section{
@@ -390,6 +383,46 @@ transform:translateX(calc(-240px * 6));
 
 }
 
+.gallery-section{
+    width:90%;
+    margin:40px auto;
+}
+
+.gallery-title{
+    text-align:center;
+    font-size:35px;
+    margin-bottom:30px;
+}
+
+.gallery-grid{
+    display:grid;
+
+    /* Responsive Grid */
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.gallery-item{
+    overflow:hidden;
+    border-radius:12px;
+    background:#fff;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.gallery-item img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    display:block;
+    transition:0.4s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+
 
 </style>
 <header>
@@ -419,73 +452,127 @@ transform:translateX(calc(-240px * 6));
   <a href="#">Portfolio/Our Works</a>
 </div>
 
-<!-- Adding video to gallery -->
- <div class="video style">
- <video width="350" height="600" controls>
-   <source src="Product video shoot.mp4" type="video/mp4">
- </video>
- </div>
-
 
 
  <section class="section">
 
-<h2 class="title">Gallery</h2>
 
 <div class="slider">
 
 <div class="slide-track">
 
 <div class="card">
-<img src="images/1.jpg">
+<img src="galleryslide1.jpg" alt="img1">
 </div>
 
 <div class="card">
-<img src="images/2.jpg">
+<img src="galleryslide2.jpg" alt="img2">
 </div>
 
 <div class="card">
-<img src="images/3.jpg">
+<img src="galleryslide3.jpg">
 </div>
 
 <div class="card">
-<img src="images/4.jpg">
+<img src="galleryslide4.jpg">
 </div>
 
 <div class="card">
-<img src="images/5.jpg">
+<img src="galleryslide5.jpg">
 </div>
 
 <div class="card">
-<img src="images/6.jpg">
+<img src="galleryslide6.jpg">
 </div>
 
 <!-- Duplicate Images -->
 
 <div class="card">
-<img src="images/1.jpg">
+<img src="galleryslide7.jpg" alt="dupli1">
 </div>
 
 <div class="card">
-<img src="images/2.jpg">
+<img src="galleryslide8.jpg" alt="dupli2">
 </div>
 
 <div class="card">
-<img src="images/3.jpg">
+<img src="galleryslide9.jpg">
 </div>
 
 <div class="card">
-<img src="images/4.jpg">
+<img src="galleryslide10.jpg">
 </div>
 
 <div class="card">
-<img src="images/5.jpg">
+<img src="galleryslide11.jpg">
 </div>
 
 <div class="card">
-<img src="images/6.jpg">
+<img src="galleryslide12.jpg">
 </div>
 
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="gallery-section">
+
+<h1 class="gallery-title">Gallery</h1>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="images/1.jpg" alt="Image 1">
+</div>
+
+<div class="gallery-item">
+<img src="images/2.jpg" alt="Image 2">
+</div>
+
+<div class="gallery-item">
+<img src="images/3.jpg" alt="Image 3">
+</div>
+
+<div class="gallery-item">
+<img src="images/4.jpg" alt="Image 4">
+</div>
+
+<div class="gallery-item">
+<img src="images/5.jpg" alt="Image 5">
+</div>
+
+<div class="gallery-item">
+<img src="images/6.jpg" alt="Image 6">
+</div>
+
+<div class="gallery-item">
+<img src="images/7.jpg" alt="Image 7">
+</div>
+
+<div class="gallery-item">
+<img src="images/8.jpg" alt="Image 8">
+</div>
+
+<div class="gallery-item">
+<img src="images/9.jpg" alt="Image 9">
+</div>
+
+<div class="gallery-item">
+<img src="images/10.jpg" alt="Image 10">
+</div>
+
+<div class="gallery-item">
+<img src="images/11.jpg" alt="Image 11">
+</div>
+
+<div class="gallery-item">
+<img src="images/12.jpg" alt="Image 12">
 </div>
 
 </div>
